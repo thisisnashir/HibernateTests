@@ -18,6 +18,7 @@
       <li><a href="#getting-started">Getting started</a></li>
       <li><a href="#important-annotations">Important annotations</a></li>
       <li><a href="#adding-image-to-database">Adding image to database</a></li>
+      <li><a href="#fetching-data-from-database">Fetching data from database</a></li>
     </ol>
   </details>
 
@@ -35,7 +36,7 @@
   2. Now we need to configure hibernate. We will do it by xml file (it can be done with java class files too).
   Now we create a `hibernate.cfg.xml` file in the /java folder.
 
-  [![file-directory][hibernate-cfg-dir]]
+  ![file-directory][hibernate-cfg-dir]
 
   Now google "hibernate cfg for mysql" and paste it in your file and now edit the username & password & database name etc parts (according to your mysql database information)
 
@@ -123,6 +124,7 @@ Now we learn about some important annotations.
 * `@Transient` : To tell java not to use a variable as column
 * `@Temporal` : To format date
 * `@Lob` : To identity a large object files
+
 some more example of annotations:  `@OneToOne`, `@OneToMany`, `@JoinColumn` etc
 
 ## Adding image to database
@@ -164,8 +166,34 @@ address.setImage(data);
 
 we can see the image is added by using sql-yog (as we cant see it in cmd).
 
-[![sql yog screenshot][sql-yog-image-save-screenshot]]
+![sql yog screenshot][sql-yog-image-save-screenshot]
 
+## Fetching data from database
+
+So now we will try to fetch data from database. two methods are used:
+* `get()` :
+            1. returns null if data does not exist(uses cache to search first)
+            2. fetches immediately all data
+* `load()` :
+            1. throws excpetions if data does not exist
+            2. does lazy loading for datas
+
+We create a new class FetchDemo and use the following snippet to fetch data.
+
+  ```java
+    SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		Session session = factory.openSession(); // not idea , using singletone is ideal
+
+		Student student = (Student)session.get(Student.class, 12);//Takes the classname and primary key parameter
+			//Explict typecast because it returns an object class
+		System.out.println(student);
+
+
+		session.close();
+		factory.close();
+  ```
+
+we could use `session.load(Student.class, 12);` but the sql-query would have only ran when we try to print it, until then a proxy would have been used.
 
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
   [sql-yog-image-save-screenshot]: ./readmeResources/sql-yog-image-save-screenshot.png
