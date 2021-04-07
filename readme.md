@@ -10,12 +10,13 @@
 
   <!-- TABLE OF CONTENTS -->
   <details open="open">
-    <summary>Table of Contents</summary>
+    <summary>Tabl e of Contents</summary>
     <ol>
       <li>
         <a href="#about-the-project">About The Project</a>
       </li>
       <li><a href="#getting-started">Getting started</a></li>
+      <li><a href="#important-annotations">Important annotations</a></li>
     </ol>
   </details>
 
@@ -62,7 +63,7 @@ public class Student {
     SessionFactory factory = new Configuration().configure().buildSessionFactory();
             //Building a SessionFactory derived object by the Configuration file
             //if the Configuration file name differs from default name (hibernate.cfg.xml)
-            //or the directory is different then we needed to provide it as parameter
+            //or the directory is different then we needed to provide it as parameter in .configure()
 
       	System.out.println(factory.isClosed());
 
@@ -109,6 +110,19 @@ mysql> select * from student;
 2 rows in set (0.28 sec)
 
   ```
+
+## Important annotations
+
+Now we learn about some important annotations.
+* `@Entity` : Tells java to treat the class as a table
+* `@Table` : Use it change the name of the table in database and other details
+* `@Id` : Tells java to use the variable as primary key
+* `@GeneratedValue` : Automated incensement for primary id
+* `@Column` : To change the column name and details
+* `@Transient` : To tell java not to use a variable as column
+* `@Temporal` : To format date
+* `@Lob` : To identity a large object files
+some more example of annotations:  `@OneToOne`, `@OneToMany`, `@JoinColumn` etc
 
 
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
