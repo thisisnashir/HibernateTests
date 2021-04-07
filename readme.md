@@ -10,7 +10,7 @@
 
   <!-- TABLE OF CONTENTS -->
   <details open="open">
-    <summary>Tabl e of Contents</summary>
+    <summary>Table of Contents</summary>
     <ol>
       <li>
         <a href="#about-the-project">About The Project</a>
@@ -152,4 +152,20 @@ so we mysql is following the annotations and now we save a object (image is not 
 |               1 | 2021-04-07 | Dhaka        | NULL         | 0x01           |
 +-----------------+------------+--------------+--------------+----------------+
 ```
+
+Now we add the image with following snippet of code
+
+```java
+FileInputStream fis = new FileInputStream("src/test/java/meme.jpg");
+byte[] data = new byte[fis.available()];
+fis.read(data);
+address.setImage(data);
+```
+
+we can see the image is added by using sql-yog (as we cant see it in cmd).
+
+[![sql yog screenshot][sql-yog-image-save-screenshot]]
+
+
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
+  [sql-yog-image-save-screenshot]: ./readmeResources/sql-yog-image-save-screenshot.png
