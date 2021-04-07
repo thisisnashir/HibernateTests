@@ -17,6 +17,7 @@
       </li>
       <li><a href="#getting-started">Getting started</a></li>
       <li><a href="#important-annotations">Important annotations</a></li>
+      <li><a href="#adding-image-to-database">Adding image to database</a></li>
     </ol>
   </details>
 
@@ -124,5 +125,7 @@ Now we learn about some important annotations.
 * `@Lob` : To identity a large object files
 some more example of annotations:  `@OneToOne`, `@OneToMany`, `@JoinColumn` etc
 
+## Adding image to database
 
+1. We start by adding new entity Address.
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
