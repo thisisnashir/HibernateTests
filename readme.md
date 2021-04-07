@@ -128,4 +128,28 @@ some more example of annotations:  `@OneToOne`, `@OneToMany`, `@JoinColumn` etc
 ## Adding image to database
 
 1. We start by adding new entity Address.
+2. Then we add the annotations and save the object.
+
+```bash
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| student_address | int         | NO   | PRI | NULL    | auto_increment |
+| date            | date        | YES  |     | NULL    |                |
+| student_city    | varchar(50) | YES  |     | NULL    |                |
+| image           | longblob    | YES  |     | NULL    |                |
+| isOpen          | bit(1)      | NO   |     | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+
+```
+
+so we mysql is following the annotations and now we save a object (image is not added here)
+
+```bash
++-----------------+------------+--------------+--------------+----------------+
+| student_address | date       | student_city | image        | isOpen         |
++-----------------+------------+--------------+--------------+----------------+
+|               1 | 2021-04-07 | Dhaka        | NULL         | 0x01           |
++-----------------+------------+--------------+--------------+----------------+
+```
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
