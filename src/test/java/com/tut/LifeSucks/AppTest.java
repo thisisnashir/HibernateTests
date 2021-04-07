@@ -1,5 +1,7 @@
 package com.tut.LifeSucks;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -44,6 +46,25 @@ public class AppTest
     	session.getTransaction().commit();
     	
     	session.close();
+    	
+    	//lets save Address object
+    	
+    	Address address = new Address();
+    	address.setOpen(true);
+    	address.setCity("Dhaka");
+    	address.setAddedDate(new Date());
+    	address.setX(5.00);
+    	
+    	session = factory.openSession();
+    	session.beginTransaction();
+    	session.save(address);
+    	
+    	session.getTransaction().commit();
+    	
+    	session.close();
+    	
+    	System.out.println("DONE ADDING ADDRESS WITHOT IMAGE");
+    	
     }
 
     /**

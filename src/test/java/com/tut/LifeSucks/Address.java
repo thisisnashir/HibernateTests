@@ -1,13 +1,41 @@
 package com.tut.LifeSucks;
 
+import java.beans.Transient;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+
+
+@Entity
+@Table(name="student_address") // Changing the table name to student_address
 public class Address {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY) // Auto increase strategy mentioned
+	@Column(name="student_address")
 	private int addressId;
+	
+	@Column(length=50,name="student_city")// Limiting maximum length
 	private String city;
+	
 	private boolean isOpen;
+	
+	@javax.persistence.Transient // IDK WTH was this trouble. Couldn't add transient normally by importing had to use the whole tag
 	private double x;
+	
+	@Column(name="date")
+	@Temporal(TemporalType.DATE)
 	private Date addedDate;
+	
+	@Lob
 	private byte[] image;
 
 	public Address() {

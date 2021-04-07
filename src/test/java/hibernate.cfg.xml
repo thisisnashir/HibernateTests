@@ -26,7 +26,7 @@
       </property>
 
 		<property name="hbm2ddl.auto">
-         update
+         create <!-- so the table is created everytime -->
       </property>
 
 		<property name="show_sql">
@@ -34,6 +34,7 @@
       </property>
 
 		<mapping class="com.tut.LifeSucks.Student" />
+		<mapping class="com.tut.LifeSucks.Address" />
 
 	</session-factory>
 </hibernate-configuration>
