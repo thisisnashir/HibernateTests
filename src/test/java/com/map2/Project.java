@@ -3,6 +3,7 @@ package com.map2;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -16,7 +17,7 @@ public class Project {
 	private int projectId;
 	private String projectName;
 
-	@ManyToMany(mappedBy = "projects")
+	@ManyToMany(mappedBy = "projects",fetch = FetchType.EAGER)
 	private List<Employee> employees;
 
 	public Project(int projectid, String projectname, List<Employee> employees) {

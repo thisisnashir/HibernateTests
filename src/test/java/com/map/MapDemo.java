@@ -46,9 +46,6 @@ public class MapDemo {
 		for (Answer each : answers) {
 			System.out.println(each);
 		}
-		
-		Answer answer = (Answer)session.get(Answer.class, 22);
-		System.out.println("Getting question from answer: " + answer.getQuestion() );
 
 		session.close();
 		factory.close();

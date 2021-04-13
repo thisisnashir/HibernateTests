@@ -32,6 +32,9 @@
 		<property name="show_sql">
          true
       </property>
+      <property name="format_sql">
+         true
+      </property>
 
 		<mapping class="com.tut.LifeSucks.Student" />
 		<mapping class="com.tut.LifeSucks.Address" />

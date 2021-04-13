@@ -236,5 +236,16 @@ If do not use mappedBy hibernate creates two separate table(redundancy).
 
 Then we use  mappedBy to remove redundancy and use JoinTable annotation to change the table name and column names.
 
+## Fetching Type
+
+There are two types of fetch method.
+1. Lazy
+2. Eager
+
+By Default fetching is Lazy. But we can change it by using `fetch = FetchType.EAGER` in the relation annotation (`@OnetoMany`, `@ManyToMany` etc). When lazy fetch is utilized the data associated with foreign key is not load until it is needed (a `get()` method call or `size()` call on the foreign key data is applied). In other words, join query is not initiated by default. But when we use eager fetch, join query is initiated by default and the data associated with foreign key is instantly loaded.
+
+So lazy loading is more optimized and is set by default 
+
+
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
   [sql-yog-image-save-screenshot]: ./readmeResources/sql-yog-image-save-screenshot.png
