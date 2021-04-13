@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -18,6 +19,10 @@ public class Employee {
 	private String employeeName;
 
 	@ManyToMany
+	@JoinTable(name = "Employe_Project_NameChanged", joinColumns = { @JoinColumn(name = "Eid") }, inverseJoinColumns = {
+			@JoinColumn(name = "Pid") }
+
+	)
 	private List<Project> projects;
 
 	public Employee(int questionId, String question, List<Project> projects) {
@@ -50,7 +55,5 @@ public class Employee {
 	public void setProjects(List<Project> projects) {
 		this.projects = projects;
 	}
-	
-	
 
 }

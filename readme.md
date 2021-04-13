@@ -234,5 +234,7 @@ We create a many-to-many relationship between projects and employees. The relati
 
 If do not use mappedBy hibernate creates two separate table(redundancy).
 
+Then we use  mappedBy to remove redundancy and use JoinTable annotation to change the table name and column names.
+
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
   [sql-yog-image-save-screenshot]: ./readmeResources/sql-yog-image-save-screenshot.png
