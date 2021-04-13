@@ -39,6 +39,14 @@ public class MapDemo {
 			session.save(answer2);
 
 			session.getTransaction().commit();
+			
+			//Lets see if we can ge the question from an answer
+			
+			Answer answer = (Answer)session.get(Answer.class, 22);
+			Question question = answer.getQuestion();
+			System.out.println("The question print: " + question);
+			System.out.println("The answer print :" + answer);
+			
 
 			session.close();
 			factory.close();

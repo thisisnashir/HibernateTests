@@ -211,5 +211,7 @@ So we create a Question class and Answer Class and add answer class to question 
 
 Later on we add Question class as foreign key to Answer Class making it a bi-directional one-to-one mapping.
 
+Then we use mappedBy keyword in OneToOne annotation to keep the joined column in answer table hidden. But its still there and we can get question from any answer object.
+
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
   [sql-yog-image-save-screenshot]: ./readmeResources/sql-yog-image-save-screenshot.png

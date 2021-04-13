@@ -12,8 +12,7 @@ public class Answer {
 	private int answerId;
 	private String answer;
 	
-	@OneToOne
-	@JoinColumn(name = "question_id")
+	@OneToOne(mappedBy = "answer") //the variable answer in question will complete the bidirectional relation without adding another column to answer
 	private Question question;
 	public Answer(int answerId, String answer) {
 		super();
@@ -24,9 +23,14 @@ public class Answer {
 	public String toString() {
 		return "Answer [answerId=" + answerId + ", answer=" + answer + "]";
 	}
+	public Question getQuestion() {
+		return question;
+	}
 	public void setQuestion(Question question) {
 		this.question = question;
 	}
+	
+	
 	
 
 }
