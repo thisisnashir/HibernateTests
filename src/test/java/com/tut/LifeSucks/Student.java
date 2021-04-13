@@ -1,5 +1,6 @@
 package com.tut.LifeSucks;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -10,16 +11,28 @@ public class Student {
 	private String name;
 	private String city;
 
-	public Student(int id, String name, String city) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.city = city;
-	}
+	private Certificate cerr; // adding another memeber who will bring more data into
+	// the table from another class;
 
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Student(int id, String name, String city, Certificate cerr) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.city = city;
+		this.cerr = cerr;
+	}
+
+	public Certificate getCerr() {
+		return cerr;
+	}
+
+	public void setCerr(Certificate cerr) {
+		this.cerr = cerr;
 	}
 
 	public int getId() {
@@ -49,9 +62,7 @@ public class Student {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return this.id + " : " +this.name+" : "+this.city;
+		return this.id + " : " + this.name + " : " + this.city;
 	}
-	
-	
 
 }

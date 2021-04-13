@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 public class FetchDemo {
 	public static void main(String[] args) {
-		
+		System.out.println("Running fetchDemo");
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession(); // not idea , using singletone is ideal
 

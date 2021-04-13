@@ -195,5 +195,13 @@ We create a new class FetchDemo and use the following snippet to fetch data.
 
 we could use `session.load(Student.class, 12);` but the sql-query would have only ran when we try to print it, until then a proxy would have been used.
 
+## Embedding annotation
+
+When we create a separate class for some more data but we want to add it's members to our table we use embedding annotation
+
+So we create a new class Certificate and embed this class into Student Class. To be noted, we did not need to edit hibernate xml file to map this class as column as this 'Certificate' class was to be embedded not created separately (if we did ask to create separate column for Certificate we would get error since then hibernate could not have resolved how to enter Certificate object into student)
+
+We could not run the EmDemo Class for sometime due to declaring main method private, silly typo but we should watch out for it.
+
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
   [sql-yog-image-save-screenshot]: ./readmeResources/sql-yog-image-save-screenshot.png

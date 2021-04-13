@@ -26,7 +26,7 @@
       </property>
 
 		<property name="hbm2ddl.auto">
-         update <!-- so the table is NOT created everytime -->
+         create <!-- so the table is created and old table with old columns are dropped -->
       </property>
 
 		<property name="show_sql">
