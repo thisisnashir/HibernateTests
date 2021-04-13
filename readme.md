@@ -209,5 +209,7 @@ So we are gonna try one-to-one mapping. We can use embedding for this but for un
 
 So we create a Question class and Answer Class and add answer class to question class as a foreign key. This is uni-directional question and answer one-to-one mapping.
 
+Later on we add Question class as foreign key to Answer Class making it a bi-directional one-to-one mapping.
+
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
   [sql-yog-image-save-screenshot]: ./readmeResources/sql-yog-image-save-screenshot.png

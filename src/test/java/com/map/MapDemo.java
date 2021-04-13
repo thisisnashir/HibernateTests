@@ -17,9 +17,11 @@ public class MapDemo {
 
 			Answer answer1 = new Answer(22,"Dhaka");
 			Question question1 = new Question(11, "What is the capital of bangladesh?",answer1);
+			answer1.setQuestion(question1);
 			
 			Answer answer2 = new Answer(88,"Delhi");
 			Question question2 = new Question(10, "What is the capital of india?",answer2);
+			answer2.setQuestion(question2);
 			
 			
 			 System.out.println(question1);

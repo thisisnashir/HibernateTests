@@ -23,6 +23,7 @@ public class Question {
 		this.question = question;
 		this.answer = answer;
 	}
+	
 
 	@Override
 	public String toString() {
