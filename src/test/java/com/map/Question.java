@@ -1,9 +1,12 @@
 package com.map;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -12,24 +15,32 @@ public class Question {
 	@Column(name = "question_id")
 	private int questionId;
 	private String question;
-	
-	@OneToOne
-	@JoinColumn(name="Answer_id")
-	private Answer answer;
 
-	public Question(int questionId, String question, Answer answer) {
+	@OneToMany
+	private List<Answer> answers;
+
+	public Question(int questionId, String question, List<Answer> answers) {
 		super();
 		this.questionId = questionId;
 		this.question = question;
-		this.answer = answer;
+		this.answers = answers;
 	}
-	
+
+	public List<Answer> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
 
 	@Override
 	public String toString() {
-		return "Question [questionId=" + questionId + ", question=" + question + ", answer=" + answer + "]";
+		String str = "";
+		for (Answer each : this.answers) {
+			str += each.getAnswer() + " ";
+		}
+		return "Question [questionId=" + questionId + ", question=" + question + ", answer=" + str + "]";
 	}
-	
-	
 
 }
