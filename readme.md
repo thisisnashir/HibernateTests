@@ -228,5 +228,11 @@ Since now the relation is bidirectional we do not need a separate table to handl
 
 So, to be noted that mappedBy can only be used in bidirectional relation (Which one should always maintain as good Practice)
 
+## ManyToMany mapping
+
+We create a many-to-many relationship between projects and employees. The relation is bidirectional (note that, unidirectional many-to-many makes no sense as that can be hadnled as one-to-many relationship)
+
+If do not use mappedBy hibernate creates two separate table(redundancy).
+
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
   [sql-yog-image-save-screenshot]: ./readmeResources/sql-yog-image-save-screenshot.png
