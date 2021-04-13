@@ -213,5 +213,14 @@ Later on we add Question class as foreign key to Answer Class making it a bi-dir
 
 Then we use mappedBy keyword in OneToOne annotation to keep the joined column in answer table hidden. But its still there and we can get question from any answer object.
 
+
+## OneToMany Mapping
+
+Here we add many answers to one question. We keep the relation unidirectional at first. We see if we do not add mappedBy keyword hibernate creates a separate table to handle the queries.
+
+##ManyToOne Mapping
+
+Now we made the relation between question and answer bi-directional. we can get one with the other and we used ManyToOne annotation for this. We can see a join column is added in answer table and a separate table is still there in database for handling multiple answers for one question.
+
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
   [sql-yog-image-save-screenshot]: ./readmeResources/sql-yog-image-save-screenshot.png

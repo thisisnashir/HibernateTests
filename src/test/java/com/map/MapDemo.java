@@ -23,8 +23,8 @@ public class MapDemo {
 		answers.add(answer1);
 		answers.add(answer2);
 		Question question1 = new Question(11, "Name a capital!", answers);
-		// answer1.setQuestion(question1);
-		// answer2.setQuestion(question1);
+		answer1.setQuestion(question1);
+		answer2.setQuestion(question1);
 
 		System.out.println(question1);
 		System.out.println(answer1);
@@ -37,7 +37,7 @@ public class MapDemo {
 
 		session.getTransaction().commit();
 
-		// Lets see if we can get all the answers of the question
+		// Lets see if we can get all the answers of the question and vice versa
 
 		Question question = session.get(Question.class, 11);
 		System.out.println("Printing question : " + question);
@@ -46,6 +46,9 @@ public class MapDemo {
 		for (Answer each : answers) {
 			System.out.println(each);
 		}
+		
+		Answer answer = (Answer)session.get(Answer.class, 22);
+		System.out.println("Getting question from answer: " + answer.getQuestion() );
 
 		session.close();
 		factory.close();

@@ -13,8 +13,8 @@ public class Answer {
 	private int answerId;
 	private String answer;
 
-	//@ManyToOne
-	//private Question question;
+	@ManyToOne
+	private Question question;
 	public Answer(int answerId, String answer) {
 		super();
 		this.answerId = answerId;
@@ -25,7 +25,6 @@ public class Answer {
 	public String toString() {
 		return "Answer [answerId=" + answerId + ", answer=" + answer + "]";
 	}
-	
 
 	public String getAnswer() {
 		return answer;
@@ -35,10 +34,12 @@ public class Answer {
 		this.answer = answer;
 	}
 
-	/*
-	 * public Question getQuestion() { return question; }
-	 * 
-	 * public void setQuestion(Question question) { this.question = question; }
-	 */
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
 
 }
