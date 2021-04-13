@@ -203,5 +203,11 @@ So we create a new class Certificate and embed this class into Student Class. To
 
 We could not run the EmDemo Class for sometime due to declaring main method private, silly typo but we should watch out for it.
 
+## OneToOne Mapping
+
+So we are gonna try one-to-one mapping. We can use embedding for this but for unidirectional , bidirectional relation details and granular control on fetching data we use one-to-one mapping.
+
+So we create a Question class and Answer Class and add answer class to question class as a foreign key. This is uni-directional question and answer one-to-one mapping.
+
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
   [sql-yog-image-save-screenshot]: ./readmeResources/sql-yog-image-save-screenshot.png

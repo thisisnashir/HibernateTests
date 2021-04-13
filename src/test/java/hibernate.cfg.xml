@@ -35,6 +35,9 @@
 
 		<mapping class="com.tut.LifeSucks.Student" />
 		<mapping class="com.tut.LifeSucks.Address" />
+		
+		<mapping class="com.map.Question" />
+		<mapping class="com.map.Answer" />
 
 	</session-factory>
 </hibernate-configuration>
