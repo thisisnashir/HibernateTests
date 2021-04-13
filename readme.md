@@ -244,7 +244,25 @@ There are two types of fetch method.
 
 By Default fetching is Lazy. But we can change it by using `fetch = FetchType.EAGER` in the relation annotation (`@OnetoMany`, `@ManyToMany` etc). When lazy fetch is utilized the data associated with foreign key is not load until it is needed (a `get()` method call or `size()` call on the foreign key data is applied). In other words, join query is not initiated by default. But when we use eager fetch, join query is initiated by default and the data associated with foreign key is instantly loaded.
 
-So lazy loading is more optimized and is set by default 
+So lazy loading is more optimized and is set by default.
+
+## Hibernate LifeCycle
+
+When hibernate works, behind the scene the data goes through 4 lifecycles or states
+
+1. `Transient`: When we create a object and set its properties.
+        Neither associated with session object nor with database
+2. `Persistent`: When we call `session.save(object)` in `Transient` state
+        Associated with BOTH session object and with database
+        Any change of object properties is reflected both on database and session object
+3. `Detached`: When we call `session.close()` / `session.clear()`  in `Persistent` state[ we can send it back to `Persistent` state afterwards by calling `session.update()`]
+        Not associated with session object but associated with database
+        Any change of object properties is NOT reflected on database
+4. `Removed`: When we call `session.remove(object)` in `Persistent` state
+        Not associated with database but associated with session object
+        Any change of object properties is NOT reflected on database
+
+
 
 
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
