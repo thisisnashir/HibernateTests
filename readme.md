@@ -222,5 +222,11 @@ Here we add many answers to one question. We keep the relation unidirectional at
 
 Now we made the relation between question and answer bi-directional. we can get one with the other and we used ManyToOne annotation for this. We can see a join column is added in answer table and a separate table is still there in database for handling multiple answers for one question.
 
+## OneToMany relation without a separate table (Bi-directional)
+
+Since now the relation is bidirectional we do not need a separate table to handle the one-to-many relation. We can handle it using the joined-column in answer and to do that we use mappedBy keyword.
+
+So, to be noted that mappedBy can only be used in bidirectional relation (Which one should always maintain as good Practice)
+
   [hibernate-cfg-dir]: ./readmeResources/hibernate-cfg-directory.png
   [sql-yog-image-save-screenshot]: ./readmeResources/sql-yog-image-save-screenshot.png
